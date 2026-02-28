@@ -1,0 +1,22 @@
+<CameraPage>:
+    name: 'camera'
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        BoxLayout:
+            id: camera_container
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.15
+
+            Button:
+                text: "Cancelar"
+                background_color: 1, 0, 0, 0.8
+                on_release: app.mudar_tela("homepage")
+
+            Button:
+                text: "Fotografar e Analisar"
+                background_color: 0, 0.8, 0, 1
+                on_release: root.capturar_e_analisar() # A função que chama as propriedades físicas

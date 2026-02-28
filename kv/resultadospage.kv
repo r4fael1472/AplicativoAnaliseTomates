@@ -1,0 +1,73 @@
+<ResultadosPage>:
+    name: 'resultados'
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 15
+        spacing: 10
+
+        Label:
+            text: "Resultados da Análise"
+            font_size: '22sp'
+            bold: True
+            size_hint_y: 0.1
+
+        Image:
+            id: img_resultado_final
+            source: '' # Preenchido via Python com o frame processado
+            allow_stretch: True
+            keep_ratio: True
+            size_hint_y: 0.4
+
+        GridLayout:
+            cols: 2
+            size_hint_y: 0.35
+            spacing: 5
+
+            # Dados atualizados via Python: tela_res.ids.label_formato.text = dados['Formato']
+            Label:
+                text: "Formato / Cultivar:"
+
+            Label:
+                id: label_formato
+                text: "---"
+                bold: True
+
+            Label:
+                text: "Diâmetro Geométrico:"
+
+            Label:
+                id: label_diam_geo
+                text: "--- cm"
+
+            Label:
+                text: "Esfericidade:"
+
+            Label:
+                id: label_esfericidade
+                text: "---"
+
+            Label:
+                text: "Volume Estimado:"
+
+            Label:
+                id: label_volume
+                text: "--- cm³"
+                color: 0, 1, 0, 1 # Destaque em verde para o dado principal
+                font_size: '18sp'
+                bold: True
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.15
+            spacing: 15
+
+            Button:
+                text: "Descartar"
+                background_color: 1, 0, 0, 0.8
+                on_release: app.mudar_tela("camerapage")
+
+            Button:
+                text: "Salvar Dados (.csv)"
+                background_color: 0, 0.8, 0, 1
+                on_release: root.salvar_csv() # Salva e volta pra home

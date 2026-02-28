@@ -1,0 +1,49 @@
+<CalibracaoPage>:
+    name: 'calibracao'
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+
+        Label:
+            text: "Calibração de Medidas"
+            font_size: '20sp'
+            size_hint_y: 0.1
+
+        BoxLayout:
+            id: camera_calibracao_container
+            size_hint_y: 0.6
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.15
+            spacing: 10
+
+            Label:
+                text: "Tamanho da Referência (mm):"
+                size_hint_x: 0.6
+
+            TextInput:
+                id: input_referencia
+                text: "25.0" # Padrão: moeda de 1 real (aprox. 25mm a 27mm)
+                multiline: False
+                input_filter: 'float'
+                size_hint_x: 0.4
+                font_size: '18sp'
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.15
+            spacing: 10
+
+            Button:
+                text: "Voltar"
+                background_color: 1, 0, 0, 0.8
+                on_release: app.mudar_tela("homepage")
+
+
+            Button:
+                text: "Calibrar"
+                background_color: 0, 0.5, 1, 1 # Azul
+                on_release: root.realizar_calibracao()

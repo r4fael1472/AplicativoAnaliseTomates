@@ -1,0 +1,36 @@
+<HomePage>:
+    name: 'home'
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 30
+        spacing: 20
+
+        # Cabeçalho
+        Label:
+            text: "Sistema de Análise de Tomates\nUFRRJ"
+            font_size: '22sp'
+            bold: True
+            halign: 'center'
+            size_hint_y: 0.3
+            color: 0.2, 0.8, 0.2, 1
+
+        # Menu de Opções
+        Button:
+            text: "1. Calibrar Sistema (PPM)"
+            font_size: '18sp'
+            on_release: app.mudar_tela("calibracaopage")
+
+        Button:
+            text: "2. Analisar por Câmera"
+            font_size: '18sp'
+            on_release: app.mudar_tela("camerapage")
+
+        Button:
+            text: "3. Processamento em Lote (Pasta)"
+            font_size: '18sp'
+            on_release: app.selecionar_arquivos()
+
+        # Espaçador no final
+        Widget:
+            size_hint_y: 0.1

@@ -1,0 +1,23 @@
+#:include kv/homepage.kv
+#:include kv/camerapage.kv
+#:include kv/calibracaopage.kv
+#:include kv/resultadospage.kv
+#:import utils kivy.utils
+
+FloatLayout:
+    ScreenManager:
+        pos_hint: {"right": 1, "top": 1}
+        size_hint: 1, 1
+        id: screen_manager
+        HomePage:
+            name: "homepage"
+            id: homepage
+        CalibracaoPage:
+            name: "calibracaopage"
+            id: calibracaopage
+        CameraPage:
+            name: "camerapage"
+            id: camerapage
+        ResultadosPage:
+            name: "resultadospage"
+            id: resultadospage
